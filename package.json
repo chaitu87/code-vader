@@ -1,0 +1,23 @@
+{
+  "name": "code-vader",
+  "version": "1.0.0",
+  "description": "A minimal snippet manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "snippet",
+    "code",
+    "electron"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "electron-reload": "^1.1.0"
+  }
+}
