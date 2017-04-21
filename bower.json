@@ -1,0 +1,16 @@
+{
+  "name": "code-vader",
+  "description": "A minimal snippet manager",
+  "main": "main.js",
+  "authors": [
+    "GitHub"
+  ],
+  "license": "CC0-1.0",
+  "keywords": [
+    "snippet",
+    "code",
+    "electron"
+  ],
+  "homepage": "https://github.com/chaitu87/code-vader",
+  "private": true
+}
