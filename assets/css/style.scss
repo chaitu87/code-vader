@@ -9,3 +9,18 @@ $white: #FFFFFF;
 	background-color: $dark;
 	color: $white;
 }
+.search-list{
+	.list-group-item{
+		cursor: pointer;
+		&:active{
+			background-color: $dark;
+			color: $white;
+		}
+	}
+}
+.the-code{
+	overflow: hidden;
+	.CodeMirror{
+		height: 100%;
+	}
+}

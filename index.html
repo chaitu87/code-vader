@@ -6,6 +6,7 @@
     <title>code-vader</title>
     <link rel="stylesheet" type="text/css" href="./bower_components/photon/dist/css/photon.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./bower_components/codemirror/lib/codemirror.css">
 </head>
 
 <body ng-app="code-vader">
@@ -14,7 +15,8 @@
             <div class="pane-group">
                 <div class="pane-sm sidebar">
                     <div class="padded-more">
-                        <p>Welcome, <br>{{firstname}} {{lastname}}</p>
+                        <p>Welcome,
+                            <br>{{firstname}} {{lastname}}</p>
                     </div>
                 </div>
                 <div class="pane-one-fourth search-list">
@@ -22,7 +24,7 @@
                         <li class="list-group-header">
                             <input class="form-control" type="text" placeholder="Search for snippet" ng-model="searchText">
                         </li>
-                        <li class="list-group-item" ng-repeat="snippet in snippets | filter:searchText">
+                        <li class="list-group-item" ng-repeat="snippet in snippets | filter:searchText" ng-click="openSnippet(snippet)">
                             <div class="media-body">
                                 <strong>{{snippet.title}}</strong>
                                 <p>{{snippet.desc}}</p>
@@ -31,9 +33,19 @@
                     </ul>
                 </div>
                 <div class="pane the-code">
-                    <div class="padded-more">
-                        pane 3
-                    </div>
+                    <header class="toolbar toolbar-header">
+                        <div class="toolbar-actions">
+                            <div class="btn-group pull-right">
+                                <button class="btn btn-default">
+                                    <span class="icon icon-home"></span>
+                                </button>
+                                <button class="btn btn-default">
+                                    <span class="icon icon-folder"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+                    <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="activeCode"></ui-codemirror>
                 </div>
             </div>
         </div>
@@ -43,7 +55,10 @@
 // You can also require other files to run in this process
 require('./renderer.js')
 </script>
+<script type="text/javascript" src="./bower_components/codemirror/lib/codemirror.js"></script>
 <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="./bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
 <script type="text/javascript" src="./assets/js/app.js"></script>
 <script src="http://localhost:35729/livereload.js?snipver=1"></script>
+
 </html>
