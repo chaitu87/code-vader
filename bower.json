@@ -15,6 +15,7 @@
   "private": true,
   "dependencies": {
     "photon": "^0.1.2-alpha",
-    "angular": "angularjs#^1.6.4"
+    "angular": "angularjs#^1.6.4",
+    "angular-ui-codemirror": "^0.3.0"
   }
 }

@@ -20,18 +20,12 @@
                 <div class="pane-one-fourth search-list">
                     <ul class="list-group">
                         <li class="list-group-header">
-                            <input class="form-control" type="text" placeholder="Search for snippet">
+                            <input class="form-control" type="text" placeholder="Search for snippet" ng-model="searchText">
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item" ng-repeat="snippet in snippets | filter:searchText">
                             <div class="media-body">
-                                <strong>List item title</strong>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media-body">
-                                <strong>List item title</strong>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <strong>{{snippet.title}}</strong>
+                                <p>{{snippet.desc}}</p>
                             </div>
                         </li>
                     </ul>
