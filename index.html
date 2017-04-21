@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <title>code-vader</title>
     <link rel="stylesheet" type="text/css" href="./bower_components/photon/dist/css/photon.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
     <div class="window">
         <div class="window-content">
             <div class="pane-group">
-                <div class="pane-sm sidebar">
+                <div class="pane-one-fourth sidebar">
                     <div class="padded-more">
-                        pane 1
+                        <p>Welcome, Chaithanya Padi</p>
+                        <h4>Total Snippets: <span>200</span></h4>
                     </div>
                 </div>
-                <div class="pane">
+                <div class="pane-one-fourth search-list">
                     <ul class="list-group">
                         <li class="list-group-header">
                             <input class="form-control" type="text" placeholder="Search for snippet">
@@ -35,7 +37,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="pane">
+                <div class="pane the-code">
                     <div class="padded-more">
                         pane 3
                     </div>
@@ -48,5 +50,6 @@
 // You can also require other files to run in this process
 require('./renderer.js')
 </script>
-
+<script type="text/javascript" src="./assets/js/app.js"></script>
+<script src="http://localhost:35729/livereload.js?snipver=1"></script>
 </html>

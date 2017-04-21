@@ -14,6 +14,7 @@
   "homepage": "https://github.com/chaitu87/code-vader",
   "private": true,
   "dependencies": {
-    "photon": "^0.1.2-alpha"
+    "photon": "^0.1.2-alpha",
+    "angular": "angularjs#^1.6.4"
   }
 }
