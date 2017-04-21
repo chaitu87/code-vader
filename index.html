@@ -8,13 +8,13 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
-<body>
-    <div class="window">
+<body ng-app="code-vader">
+    <div class="window" ng-controller="masterCtrl">
         <div class="window-content">
             <div class="pane-group">
                 <div class="pane-one-fourth sidebar">
                     <div class="padded-more">
-                        <p>Welcome, Chaithanya Padi</p>
+                        <p>Welcome, {{firstname}} {{lastname}}</p>
                         <h4>Total Snippets: <span>200</span></h4>
                     </div>
                 </div>
@@ -50,6 +50,7 @@
 // You can also require other files to run in this process
 require('./renderer.js')
 </script>
+<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="./assets/js/app.js"></script>
 <script src="http://localhost:35729/livereload.js?snipver=1"></script>
 </html>
