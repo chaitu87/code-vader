@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
 
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
+<head>
+    <meta charset="UTF-8">
+    <title>code-vader</title>
+    <link rel="stylesheet" type="text/css" href="./bower_components/photon/dist/css/photon.min.css">
+</head>
+
+<body>
+    <div class="window">
+        <div class="window-content">
+            <div class="pane-group">
+                <div class="pane-sm sidebar">
+                    <div class="padded-more">
+                        pane 1
+                    </div>
+                </div>
+                <div class="pane">
+                    <ul class="list-group">
+                        <li class="list-group-header">
+                            <input class="form-control" type="text" placeholder="Search for snippet">
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media-body">
+                                <strong>List item title</strong>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media-body">
+                                <strong>List item title</strong>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pane">
+                    <div class="padded-more">
+                        pane 3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+// You can also require other files to run in this process
+require('./renderer.js')
+</script>
+
 </html>

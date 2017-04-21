@@ -12,5 +12,8 @@
     "electron"
   ],
   "homepage": "https://github.com/chaitu87/code-vader",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "photon": "^0.1.2-alpha"
+  }
 }
