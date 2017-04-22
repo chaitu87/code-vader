@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./bower_components/photon/dist/css/photon.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="./bower_components/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="./bower_components/codemirror/theme/solarized.css">
 </head>
 
 <body ng-app="code-vader">
@@ -14,17 +15,20 @@
         <div class="window-content">
             <div class="pane-group">
                 <div class="pane-sm sidebar">
-                    <div class="padded-more">
-                        <p>Welcome,
-                            <br>{{firstname}} {{lastname}}</p>
-                    </div>
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title">Tags</h5>
+                        <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#fc605b"></span> Javascript</span>
+                        <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#fdbc40"></span> Ruby</span>
+                        <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#34c84a"></span> Shell</span>
+                        <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#57acf5"></span> Confs</span>
+                    </nav>
                 </div>
                 <div class="pane-one-fourth search-list">
                     <ul class="list-group">
                         <li class="list-group-header">
                             <input class="form-control" type="text" placeholder="Search for snippet" ng-model="searchText">
                         </li>
-                        <li class="list-group-item" ng-repeat="snippet in snippets | filter:searchText" ng-click="openSnippet(snippet)">
+                        <li class="list-group-item" ng-repeat="snippet in snippets | filter:searchText" ng-click="openSnippet(snippet)" ng-class="{active: $index === activeSnippet}">
                             <div class="media-body">
                                 <strong>{{snippet.title}}</strong>
                                 <p>{{snippet.desc}}</p>
@@ -45,7 +49,7 @@
                             </div>
                         </div>
                     </header>
-                    <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="activeCode"></ui-codemirror>
+                    <textarea ui-codemirror="cmOption" ng-model="activeCode"></textarea>
                 </div>
             </div>
         </div>
@@ -60,5 +64,23 @@ require('./renderer.js')
 <script type="text/javascript" src="./bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
 <script type="text/javascript" src="./assets/js/app.js"></script>
 <script src="http://localhost:35729/livereload.js?snipver=1"></script>
+<!-- Languages -->
+<script type="text/javascript" src="./bower_components/codemirror/mode/clojure/clojure.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/css/css.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/erlang/erlang.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/erlang/erlang.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/go/go.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/haml/haml.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/haml/haml.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/markdown/markdown.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/nginx/nginx.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/python/python.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/ruby/ruby.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/sass/sass.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/shell/shell.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/sql/sql.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/xml/xml.js"></script>
+<script type="text/javascript" src="./bower_components/codemirror/mode/yaml/yaml.js"></script>
 
 </html>

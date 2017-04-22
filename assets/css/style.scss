@@ -1,26 +1,39 @@
 // Variables
 $dark: #212121;
 $white: #FFFFFF;
-
 // Styles
+// Logo
+.logo {
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+}
 
 // Panes
-.sidebar{
-	background-color: $dark;
-	color: $white;
+.sidebar {
+    background-color: $dark;
+    color: $white;
+    .nav-group {
+        .nav-group-item {
+            color: $white;
+        }
+    }
 }
-.search-list{
-	.list-group-item{
-		cursor: pointer;
-		&:active{
-			background-color: $dark;
-			color: $white;
-		}
-	}
+
+.search-list {
+    .list-group-item {
+        cursor: pointer;
+        &.active {
+            background-color: $dark;
+            color: $white;
+        }
+    }
 }
-.the-code{
-	overflow: hidden;
-	.CodeMirror{
-		height: 100%;
-	}
+
+.the-code {
+    overflow: hidden;
+    .CodeMirror {
+        height: 100%;
+    }
 }

@@ -2,26 +2,32 @@ var app = angular.module("code-vader", ['ui.codemirror'])
     .controller('masterCtrl', function($scope) {
         $scope.firstname = "Chaithanya";
         $scope.lastname = "Padi";
-        $scope.editorOptions = {
-            lineWrapping: true,
+        $scope.modes = ['Scheme', 'XML', 'Javascript'];
+        $scope.mode = $scope.modes[0];
+        // The ui-codemirror option
+        $scope.cmOption = {
             lineNumbers: true,
-            mode: 'javascript',
-            scrollbarStyle: null
+            indentWithTabs: true,
+            mode: $scope.mode
         };
         $scope.snippets = [{
             title: 'Welcome Code',
             desc: 'this code is a welcome code ... we test highlight here',
-            code: 'var wow="hello";\nconsole.log(wow);',
+            code: '// Javascript code in here.\n' +
+            'function foo(msg) {\n\tvar r = Math.random();\n\treturn "" + r + " : " + msg;\n}',
             language: 'javascript'
         }, {
             title: 'Other Test',
             desc: 'Test different languages',
-            code: 'puts "hello"',
+            code: 'something = "nothing";\nputs something;\nrequire "rubygems"',
             language: 'ruby'
         }];
         $scope.activeCode = $scope.snippets[0].code;
-        $scope.openSnippet = function(snippet){
-        	console.log(snippet);
-        	$scope.activeCode = snippet.code;
+        $scope.cmOption.mode = $scope.snippets[0].language;
+        $scope.activeSnippet = 0;
+        $scope.openSnippet = function(snippet) {
+            $scope.activeSnippet = this.$index;
+            $scope.activeCode = snippet.code;
+            $scope.cmOption.mode = snippet.language;
         };
     });
