@@ -39,17 +39,30 @@
                 <div class="pane the-code">
                     <header class="toolbar toolbar-header">
                         <div class="toolbar-actions">
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-block">Add Snippet</button>
+                            </div>
                             <div class="btn-group pull-right">
                                 <button class="btn btn-default">
-                                    <span class="icon icon-home"></span>
+                                    <span class="icon icon-floppy"></span>
                                 </button>
                                 <button class="btn btn-default">
-                                    <span class="icon icon-folder"></span>
+                                    <span class="icon icon-export"></span>
+                                </button>
+                                <button class="btn btn-default">
+                                    <span class="icon icon-share"></span>
                                 </button>
                             </div>
                         </div>
                     </header>
                     <textarea ui-codemirror="cmOption" ng-model="activeCode"></textarea>
+                    <footer class="toolbar toolbar-footer">
+                        <div class="toolbar-actions">
+                            <button class="btn btn-primary pull-right">
+                                Save
+                            </button>
+                        </div>
+                    </footer>
                 </div>
             </div>
         </div>
@@ -59,11 +72,17 @@
 // You can also require other files to run in this process
 require('./renderer.js')
 </script>
+<!-- Libaries -->
+<script>
+if (typeof module === 'object') {
+    window.module = module;
+    module = undefined;
+}
+</script>
+<script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="./bower_components/codemirror/lib/codemirror.js"></script>
-<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="./bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
-<script type="text/javascript" src="./assets/js/app.js"></script>
-<script src="http://localhost:35729/livereload.js?snipver=1"></script>
 <!-- Languages -->
 <script type="text/javascript" src="./bower_components/codemirror/mode/clojure/clojure.js"></script>
 <script type="text/javascript" src="./bower_components/codemirror/mode/css/css.js"></script>
@@ -82,5 +101,12 @@ require('./renderer.js')
 <script type="text/javascript" src="./bower_components/codemirror/mode/sql/sql.js"></script>
 <script type="text/javascript" src="./bower_components/codemirror/mode/xml/xml.js"></script>
 <script type="text/javascript" src="./bower_components/codemirror/mode/yaml/yaml.js"></script>
+<!-- Application -->
+<script type="text/javascript" src="./assets/js/app.js"></script>
+<script type="text/javascript" src="./assets/js/custom.js"></script>
+<script src="http://localhost:35729/livereload.js?snipver=1"></script>
+<script>
+if (window.module) module = window.module;
+</script>
 
 </html>

@@ -3,18 +3,17 @@ var app = angular.module("code-vader", ['ui.codemirror'])
         $scope.firstname = "Chaithanya";
         $scope.lastname = "Padi";
         $scope.modes = ['Scheme', 'XML', 'Javascript'];
-        $scope.mode = $scope.modes[0];
         // The ui-codemirror option
         $scope.cmOption = {
             lineNumbers: true,
-            indentWithTabs: true,
-            mode: $scope.mode
+            indentWithTabs: true
         };
+
         $scope.snippets = [{
             title: 'Welcome Code',
             desc: 'this code is a welcome code ... we test highlight here',
             code: '// Javascript code in here.\n' +
-            'function foo(msg) {\n\tvar r = Math.random();\n\treturn "" + r + " : " + msg;\n}',
+                'function foo(msg) {\n\tvar r = Math.random();\n\treturn "" + r + " : " + msg;\n}',
             language: 'javascript'
         }, {
             title: 'Other Test',

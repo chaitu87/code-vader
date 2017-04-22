@@ -1,6 +1,11 @@
 // Variables
 $dark: #212121;
 $white: #FFFFFF;
+// Global Styles
+.btn-block{
+	width: 100%;
+	text-align: center;
+}
 // Styles
 // Logo
 .logo {
@@ -33,7 +38,4 @@ $white: #FFFFFF;
 
 .the-code {
     overflow: hidden;
-    .CodeMirror {
-        height: 100%;
-    }
 }
