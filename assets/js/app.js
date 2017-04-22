@@ -2,7 +2,7 @@ var app = angular.module("code-vader", ['ui.codemirror'])
     .controller('masterCtrl', function($scope) {
         $scope.firstname = "Chaithanya";
         $scope.lastname = "Padi";
-        $scope.modes = ['Scheme', 'XML', 'Javascript'];
+        $scope.modes = ['clojure', 'css', 'erlang', 'go', 'haml', 'javascript', 'markdown', 'nginx', 'python', 'ruby', 'sass', 'shell', 'sql', 'xml', 'yaml'];
         // The ui-codemirror option
         $scope.cmOption = {
             lineNumbers: true,
@@ -24,9 +24,22 @@ var app = angular.module("code-vader", ['ui.codemirror'])
         $scope.activeCode = $scope.snippets[0].code;
         $scope.cmOption.mode = $scope.snippets[0].language;
         $scope.activeSnippet = 0;
+        // View code of the snippet
         $scope.openSnippet = function(snippet) {
             $scope.activeSnippet = this.$index;
             $scope.activeCode = snippet.code;
             $scope.cmOption.mode = snippet.language;
+        };
+        // Add a new snippet
+        $scope.addSnippet = function() {
+            $scope.snippets.push({
+                title: 'New Snippet',
+                desc: 'enter description here',
+                code: '',
+                language: 'javascript'
+            });
+            $scope.activeSnippet = $scope.snippets.length - 1;
+            $scope.activeCode = $scope.snippets[$scope.activeSnippet].code;
+            $scope.cmOption.mode = $scope.snippets[$scope.activeSnippet].language;
         };
     });
