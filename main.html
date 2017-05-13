@@ -1,0 +1,50 @@
+<div class="pane-group">
+    <div class="pane-sm sidebar">
+        <nav class="nav-group">
+            <h5 class="nav-group-title">Tags</h5>
+            <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#fc605b"></span> Javascript</span>
+            <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#fdbc40"></span> Ruby</span>
+            <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#34c84a"></span> Shell</span>
+            <span class="nav-group-item" href="#"><span class="icon icon-record" style="color:#57acf5"></span> Confs</span>
+        </nav>
+        <ul>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+        </ul>
+    </div>
+    <div class="pane-one-fourth search-list">
+        <ul class="list-group">
+            <li class="list-group-header">
+                <input class="form-control" type="text" placeholder="Search for snippet" ng-model="searchText">
+            </li>
+            <li class="list-group-item" ng-repeat="snippet in snippets | filter:searchText" ng-click="openSnippet(snippet)" ng-class="{active: $index === activeSnippet}">
+                <div class="media-body">
+                    <strong>{{snippet.title}}</strong>
+                    <p>{{snippet.desc}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="pane the-code">
+        <header class="toolbar toolbar-header">
+            <div class="toolbar-actions">
+                <div class="btn-group">
+                    <button class="btn btn-primary btn-block" ng-click="addSnippet()">Add Snippet</button>
+                </div>
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default">
+                        <span class="icon icon-floppy"></span>
+                    </button>
+                    <button class="btn btn-default">
+                        <span class="icon icon-export"></span>
+                    </button>
+                    <button class="btn btn-default">
+                        <span class="icon icon-share"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <textarea ui-codemirror="cmOption" ng-model="activeCode"></textarea>
+    </div>
+</div>
